@@ -17,7 +17,6 @@ struct PokemonStruct {
     var pokemonURL: String?
 }
 
-
 class MainViewController: UITableViewController {
     private static let mainCellReuseIdentifier = "pls let this work"
     
@@ -52,7 +51,7 @@ class MainViewController: UITableViewController {
         }
 
         let pokemon = pokemons[indexPath.row]
-        let formattedPokemonName = String(format: NSLocalizedString(pokemon.nameKey, comment: ""), pokemon.name)
+        let formattedPokemonName = pokemon.name
         cell.pokemonNameLabel.text = formattedPokemonName
 
 
@@ -66,33 +65,35 @@ class MainViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
            tableView.deselectRow(at: indexPath, animated: true)
 
-           let pokemon = pokemons[indexPath.row]
+           var pokemon = pokemons[indexPath.row]
            let nameComponents = pokemon.nameKey.components(separatedBy: "-")
            let pokemonName = nameComponents.last ?? pokemon.nameKey
+           let detailsVC = DetailsViewController(pokemon: pokemon)
+           navigationController?.pushViewController(detailsVC, animated: true)
 
-           PokemonAPI().pokemonService.fetchPokemon(pokemonName) { result in
+        PokemonAPI().pokemonService.fetchPokemon(pokemonName) { [self] result in
                switch result {
-               case .success(let pokemon):
+               case .success(let pokemonRetrieve):
                    print("It worked")
-                   
+                   print(pokemon.nameKey)
                    print(pokemon.name)
-                   if let types = pokemon.types?.map({($0.type?.name)!}).joined(separator: ", ") {
-                           print("Types: \(types)")
-                           if let index = self.pokemons.firstIndex(where: { $0.nameKey == pokemonName }) {
-                               self.pokemons[index].types = pokemon.types?.map { $0.type?.name ?? "" }
-                               self.pokemons[index].pokemonURL = pokemon.sprites?.frontDefault ?? ""
-                            }
-                       }
-                   if let imageUrl = pokemon.sprites?.frontDefault {
-                                   print("Image URL: \(imageUrl)")
-                               }
+                   print(pokemonRetrieve.name)
+                   print(pokemonRetrieve.types)
+                   print(pokemonRetrieve.sprites?.frontDefault)
+                   if let types = pokemonRetrieve.types?.map({ $0.type?.name ?? "" }).joined(separator: ", ") {
+                       pokemon.types = types.split(separator: ",").map { String($0.trimmingCharacters(in: .whitespaces)) }
+                   }
+                   if let pokemonURLString = pokemonRetrieve.sprites?.frontDefault {
+                        pokemon.pokemonURL = pokemonURLString
+                   }
+                   print(pokemon.types)
+                   print(pokemon.pokemonURL)
                case .failure(let error):
                    print("It failed")
                    print(error.localizedDescription)
                }
            }
        }
-    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1

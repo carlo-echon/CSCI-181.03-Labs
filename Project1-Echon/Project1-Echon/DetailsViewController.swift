@@ -10,7 +10,6 @@ import PokemonAPI
 
 class DetailsViewController: UIViewController{
     var pokemonDetails: PokemonStruct?
-    var pokemonDetails2: PKMPokemon?
     
     @IBOutlet weak var pokemonNameEntry: UILabel!
     @IBOutlet weak var type2: UILabel!
@@ -21,7 +20,7 @@ class DetailsViewController: UIViewController{
             super.viewDidLoad()
             
             // Set the Pokemon name label
-            pokemonNameEntry?.text = pokemonDetails2?.name ?? "No Pokemon Name"
+            pokemonNameEntry?.text = pokemonDetails?.name ?? "No Pokemon Name"
         
             title = pokemonDetails?.name
             
@@ -32,7 +31,7 @@ class DetailsViewController: UIViewController{
             }
             
             // Load the Pokemon image
-            if let pokemonName = pokemonDetails2?.name {
+            if let pokemonName = pokemonDetails?.name {
                 PokemonAPI().pokemonService.fetchPokemon(pokemonName) { result in
                     switch result {
                     case .success(let pokemon):
