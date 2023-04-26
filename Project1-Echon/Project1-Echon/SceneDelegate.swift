@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  Project1-Echon
 //
-//  Created by Katrina Echon on 4/21/23.
+//  Created by Carlo Echon on 4/21/23.
 //
 
 import UIKit

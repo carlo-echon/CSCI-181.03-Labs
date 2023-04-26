@@ -2,7 +2,7 @@
 //  DetailsViewController.swift
 //  Project1-Echon
 //
-//  Created by Katrina Echon on 4/21/23.
+//  Created by Carloarlo Echon on 4/21/23.
 //
 
 import UIKit
@@ -18,12 +18,11 @@ class DetailsViewController: UIViewController{
     
     override func viewDidLoad() {
             super.viewDidLoad()
-            
+            title = pokemonDetails?.name
+        
             // Set the Pokemon name label
             pokemonNameEntry?.text = pokemonDetails?.name ?? "No Pokemon Name"
         
-            title = pokemonDetails?.name
-            
             // Set the Pokemon types labels
             if let types = pokemonDetails?.types {
                 type1?.text = types.count >= 1 ? types[0] : ""

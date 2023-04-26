@@ -2,7 +2,7 @@
 //  PokemonViewController.swift
 //  Project1-Echon
 //
-//  Created by Katrina Echon on 4/21/23.
+//  Created by Carlo Echon on 4/21/23.
 //
 
 import UIKit
@@ -68,8 +68,9 @@ class MainViewController: UITableViewController {
            var pokemon = pokemons[indexPath.row]
            let nameComponents = pokemon.nameKey.components(separatedBy: "-")
            let pokemonName = nameComponents.last ?? pokemon.nameKey
-           let detailsVC = DetailsViewController(pokemon: pokemon)
-           navigationController?.pushViewController(detailsVC, animated: true)
+        guard let pokemonDetailsViewController = storyboard?.instantiateViewController(withIdentifier: "detailsVCID") as? DetailsViewController else {return}
+        pokemonDetailsViewController.pokemonDetails = pokemon
+           navigationController?.pushViewController(pokemonDetailsViewController, animated: true)
 
         PokemonAPI().pokemonService.fetchPokemon(pokemonName) { [self] result in
                switch result {
