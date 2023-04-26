@@ -57,20 +57,16 @@ class MainViewController: UITableViewController {
 
         return cell
     }
-
-
-    
-    
-
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
            tableView.deselectRow(at: indexPath, animated: true)
 
            var pokemon = pokemons[indexPath.row]
            let nameComponents = pokemon.nameKey.components(separatedBy: "-")
            let pokemonName = nameComponents.last ?? pokemon.nameKey
-        guard let pokemonDetailsViewController = storyboard?.instantiateViewController(withIdentifier: "detailsVCID") as? DetailsViewController else {return}
+        guard let pokemonDetailsViewController = storyboard?.instantiateViewController(withIdentifier: "DetailedPokemon1") as? PokemonDetailsViewController else { return }
         pokemonDetailsViewController.pokemonDetails = pokemon
-           navigationController?.pushViewController(pokemonDetailsViewController, animated: true)
+        navigationController?.pushViewController(pokemonDetailsViewController, animated: true)
+
 
         PokemonAPI().pokemonService.fetchPokemon(pokemonName) { [self] result in
                switch result {
@@ -94,7 +90,7 @@ class MainViewController: UITableViewController {
                    print(error.localizedDescription)
                }
            }
-       }
+        }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1

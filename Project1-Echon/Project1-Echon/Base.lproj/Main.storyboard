@@ -3,6 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -46,6 +47,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GqX-c6-jtr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1097" y="-22"/>
+        </scene>
+        <!--Pokemon Details View Controller-->
+        <scene sceneID="doE-fL-l8h">
+            <objects>
+                <viewController storyboardIdentifier="DetailedPokemon1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hEn-hW-0BZ" customClass="PokemonDetailsViewController" customModule="Project1_Echon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RWn-DO-lsy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nhs-2O-gQX">
+                                <rect key="frame" x="67" y="199" width="241" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="R20-iG-4IL"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7u-UT-vNC">
+                                <rect key="frame" x="91" y="361" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVl-mM-7Ce">
+                                <rect key="frame" x="232" y="361" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYV-w2-XdF">
+                                <rect key="frame" x="145" y="135" width="108" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="U9S-uh-ld1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HYV-w2-XdF" firstAttribute="centerX" secondItem="RWn-DO-lsy" secondAttribute="centerX" constant="11.5" id="1u2-fM-eBS"/>
+                            <constraint firstItem="Nhs-2O-gQX" firstAttribute="leading" secondItem="U9S-uh-ld1" secondAttribute="leading" constant="67" id="DSi-nL-9p8"/>
+                            <constraint firstItem="HYV-w2-XdF" firstAttribute="leading" secondItem="U9S-uh-ld1" secondAttribute="leading" constant="145" id="MEQ-TL-2Cz"/>
+                            <constraint firstItem="P7u-UT-vNC" firstAttribute="leading" secondItem="U9S-uh-ld1" secondAttribute="leading" constant="91" id="OvM-qG-dTa"/>
+                            <constraint firstItem="HYV-w2-XdF" firstAttribute="centerX" secondItem="Nhs-2O-gQX" secondAttribute="centerX" constant="11.5" id="Pej-pM-dSm"/>
+                            <constraint firstItem="Nhs-2O-gQX" firstAttribute="top" secondItem="HYV-w2-XdF" secondAttribute="bottom" constant="43" id="YOT-Z3-0nu"/>
+                            <constraint firstItem="P7u-UT-vNC" firstAttribute="baseline" secondItem="dVl-mM-7Ce" secondAttribute="baseline" id="YXE-dy-2ip"/>
+                            <constraint firstItem="P7u-UT-vNC" firstAttribute="top" secondItem="Nhs-2O-gQX" secondAttribute="bottom" constant="34" id="hEb-v7-fRN"/>
+                            <constraint firstItem="dVl-mM-7Ce" firstAttribute="leading" secondItem="P7u-UT-vNC" secondAttribute="trailing" constant="99" id="mhI-0j-UWk"/>
+                            <constraint firstItem="HYV-w2-XdF" firstAttribute="top" secondItem="U9S-uh-ld1" secondAttribute="top" constant="115" id="usS-Ts-taE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="PokemonImage" destination="Nhs-2O-gQX" id="yA8-hx-V5f"/>
+                        <outlet property="PokemonName" destination="HYV-w2-XdF" id="1ll-VQ-TGx"/>
+                        <outlet property="PokemonType1" destination="P7u-UT-vNC" id="HJS-oE-45S"/>
+                        <outlet property="PokemonType2" destination="dVl-mM-7Ce" id="Q5X-4K-B2W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uaH-rb-VBc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-664.79999999999995" y="625.63718140929541"/>
         </scene>
     </scenes>
     <resources>

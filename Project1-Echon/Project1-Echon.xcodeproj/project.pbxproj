@@ -20,10 +20,9 @@
 		28B792EC29F27D7700AC3442 /* PokemonAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 28B792EB29F27D7700AC3442 /* PokemonAPI */; };
 		28B792EE29F27DEE00AC3442 /* PokemonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B792ED29F27DEE00AC3442 /* PokemonViewCell.swift */; };
 		28B7934629F29BBC00AC3442 /* PokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B7934529F29BBC00AC3442 /* PokemonViewController.swift */; };
-		28B7934829F29F0900AC3442 /* DetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B7934729F29F0900AC3442 /* DetailsViewController.storyboard */; };
-		28B7934A29F29F4300AC3442 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B7934929F29F4300AC3442 /* DetailsViewController.swift */; };
 		28B7934B29F2A1D800AC3442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B792B829F2748A00AC3442 /* Main.storyboard */; };
 		28B7934C29F2A1D900AC3442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B792B829F2748A00AC3442 /* Main.storyboard */; };
+		28DEE27829F924C6000CA507 /* PokemonDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DEE27729F924C6000CA507 /* PokemonDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +64,7 @@
 		28B7934329F29B5200AC3442 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		28B7934429F29B5200AC3442 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		28B7934529F29BBC00AC3442 /* PokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewController.swift; sourceTree = "<group>"; };
-		28B7934729F29F0900AC3442 /* DetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsViewController.storyboard; sourceTree = "<group>"; };
-		28B7934929F29F4300AC3442 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		28DEE27729F924C6000CA507 /* PokemonDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,9 +122,8 @@
 				28B792B829F2748A00AC3442 /* Main.storyboard */,
 				28B792ED29F27DEE00AC3442 /* PokemonViewCell.swift */,
 				28068F2229F3BB750041B98A /* Localizable.strings */,
-				28B7934929F29F4300AC3442 /* DetailsViewController.swift */,
+				28DEE27729F924C6000CA507 /* PokemonDetailsViewController.swift */,
 				28B7934529F29BBC00AC3442 /* PokemonViewController.swift */,
-				28B7934729F29F0900AC3442 /* DetailsViewController.storyboard */,
 				28B792BB29F2748B00AC3442 /* Assets.xcassets */,
 				28B792BD29F2748B00AC3442 /* LaunchScreen.storyboard */,
 				28B792C029F2748B00AC3442 /* Info.plist */,
@@ -263,7 +260,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				28068F2029F3BB750041B98A /* Localizable.strings in Resources */,
-				28B7934829F29F0900AC3442 /* DetailsViewController.storyboard in Resources */,
 				28B792BF29F2748B00AC3442 /* LaunchScreen.storyboard in Resources */,
 				28B792BC29F2748B00AC3442 /* Assets.xcassets in Resources */,
 				28B792BA29F2748A00AC3442 /* Main.storyboard in Resources */,
@@ -297,8 +293,8 @@
 				28B792B329F2748A00AC3442 /* AppDelegate.swift in Sources */,
 				28B7934629F29BBC00AC3442 /* PokemonViewController.swift in Sources */,
 				28B792B529F2748A00AC3442 /* SceneDelegate.swift in Sources */,
+				28DEE27829F924C6000CA507 /* PokemonDetailsViewController.swift in Sources */,
 				28B792EE29F27DEE00AC3442 /* PokemonViewCell.swift in Sources */,
-				28B7934A29F29F4300AC3442 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
